@@ -159,8 +159,8 @@ main {
   padding-right: var(--pad);
 }
 .section {
-  padding-top: clamp(4.5rem, 7vw, 7rem);
-  padding-bottom: clamp(4.5rem, 7vw, 7rem);
+  padding-top: clamp(3.75rem, 5.5vw, 5.5rem);
+  padding-bottom: clamp(3.75rem, 5.5vw, 5.5rem);
 }
 .eyebrow {
   font-size: 0.67rem;
@@ -252,7 +252,7 @@ main {
   grid-column: 1/-1;
   width: 68%;
   margin-left: auto;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 .project-image {
   aspect-ratio: 4/5;
@@ -325,7 +325,7 @@ main {
   font-size: 0.7rem;
 }
 .closing {
-  min-height: 52vh;
+  min-height: 44vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -336,11 +336,11 @@ main {
   max-width: 800px;
 }
 .page-head {
-  padding-top: clamp(4.5rem, 7vw, 7rem);
-  padding-bottom: clamp(3rem, 5vw, 5rem);
+  padding-top: clamp(3.75rem, 5.5vw, 5.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 4rem);
 }
 .page-head + .section {
-  padding-top: clamp(1.5rem, 3vw, 3rem);
+  padding-top: clamp(1.25rem, 2.25vw, 2.25rem);
 }
 .page-head .lede {
   margin-left: auto;
@@ -348,7 +348,7 @@ main {
 .folio {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  row-gap: clamp(5rem, 7vw, 7rem);
+  row-gap: clamp(4rem, 5.5vw, 5.5rem);
 }
 .folio .project-card:nth-child(1) {
   grid-column: 1/10;
@@ -372,7 +372,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8vw;
-  padding-bottom: clamp(4rem, 6vw, 6rem);
+  padding-bottom: clamp(3.25rem, 4.75vw, 4.75rem);
 }
 .studio-image {
   aspect-ratio: 4/5;
@@ -388,10 +388,10 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4vw;
-  margin-top: clamp(3.5rem, 5vw, 4.5rem);
+  margin-top: clamp(2.75rem, 4vw, 3.5rem);
 }
 .studio-layout + .section {
-  padding-top: clamp(2.5rem, 4vw, 4rem);
+  padding-top: clamp(2rem, 3vw, 3rem);
 }
 .principles article {
   border-top: 1px solid var(--line);
@@ -403,7 +403,7 @@ main {
 .services-page .service-row {
   grid-template-columns: 6rem 1fr 1fr;
   gap: 4vw;
-  padding: 3.5rem 0;
+  padding: 2.75rem 0;
 }
 .services-page .service-row h2 {
   font: 400 clamp(2.1rem, 4vw, 4rem)/1 var(--serif);
@@ -419,7 +419,7 @@ main {
   gap: 10vw;
 }
 .contact-details {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 .contact-form {
   display: grid;
@@ -528,11 +528,11 @@ main {
 }
 footer {
   border-top: 1px solid var(--line);
-  padding: clamp(3.5rem, 7vw, 6.5rem) var(--pad) 2rem;
+  padding: clamp(3rem, 5.5vw, 5rem) var(--pad) 2rem;
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   column-gap: clamp(3rem, 8vw, 9rem);
-  row-gap: clamp(4rem, 8vw, 7rem);
+  row-gap: clamp(3.25rem, 6vw, 5.5rem);
 }
 .footer-intro {
   display: flex;
@@ -602,15 +602,15 @@ footer .brand-name {
 }
 @media (max-width: 760px) {
   .section {
-    padding-top: 3.75rem;
-    padding-bottom: 3.75rem;
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
   }
   .page-head {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
   }
   .page-head + .section {
-    padding-top: 1.5rem;
+    padding-top: 1.25rem;
   }
   .site-header {
     grid-template-columns: 1fr auto;
@@ -734,20 +734,20 @@ footer .brand-name {
     display: block;
   }
   .folio .project-card {
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
   }
   .folio .project-card:nth-child(n) {
     width: auto;
   }
   .principles {
     grid-template-columns: 1fr;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
   }
   .studio-layout {
-    padding-bottom: 3rem;
+    padding-bottom: 2.5rem;
   }
   .studio-layout + .section {
-    padding-top: 2rem;
+    padding-top: 1.75rem;
   }
   .services-page .service-row {
     grid-template-columns: 3rem 1fr;
@@ -768,8 +768,8 @@ footer .brand-name {
   }
   .closing {
     min-height: auto;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
   .project-hero {
     align-items: start;
@@ -783,7 +783,7 @@ footer .brand-name {
   }
   footer {
     grid-template-columns: 1fr;
-    row-gap: 3.5rem;
+    row-gap: 3rem;
   }
   footer .brand-name {
     font-size: clamp(3.7rem, 18vw, 5.5rem);
