@@ -59,31 +59,69 @@ textarea {
 .site-header {
   position: relative;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem var(--pad);
-  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.8fr) 1fr;
+  align-items: stretch;
+  min-height: 7.5rem;
+  padding: 0 var(--pad);
+}
+.site-header:after {
+  content: "";
+  position: absolute;
+  right: var(--pad);
+  bottom: 0;
+  left: var(--pad);
+  height: 1px;
+  background: var(--line);
 }
 .brand {
   font-weight: 600;
   letter-spacing: -0.03em;
 }
-.brand span {
+.site-header .brand {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: clamp(1.25rem, 2.5vw, 3rem);
+  padding: 1.35rem 0 1.6rem;
+}
+.brand-name {
+  font: 400 clamp(1.9rem, 2.7vw, 2.8rem)/0.85 var(--serif);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+.brand-descriptor {
   display: block;
   font-size: 0.6rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: -0.25rem;
+  padding-bottom: 0.1rem;
+  white-space: nowrap;
 }
 .nav {
   display: flex;
-  gap: clamp(1.5rem, 3vw, 3.5rem);
-  font-size: 0.78rem;
+  justify-content: flex-end;
+  align-items: end;
+  gap: clamp(1.75rem, 3.2vw, 4rem);
+  padding: 0 0 1.65rem clamp(2rem, 5vw, 6rem);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  counter-reset: navigation;
 }
 .nav a {
   position: relative;
+  counter-increment: navigation;
+}
+.nav a:before {
+  content: "0" counter(navigation);
+  position: absolute;
+  top: -1.1rem;
+  left: 0;
+  color: var(--muted);
+  font-size: 0.48rem;
+  letter-spacing: 0.08em;
 }
 .nav a:after,
 .text-link:after {
@@ -483,19 +521,62 @@ main {
 }
 footer {
   border-top: 1px solid var(--line);
-  padding: 3rem var(--pad);
+  padding: clamp(3.5rem, 7vw, 6.5rem) var(--pad) 2rem;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2rem;
-  align-items: end;
+  grid-template-columns: 1.25fr 0.75fr;
+  column-gap: clamp(3rem, 8vw, 9rem);
+  row-gap: clamp(4rem, 8vw, 7rem);
 }
-footer p {
+.footer-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer p,
+.footer-nav a,
+.footer-contact a {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   color: var(--muted);
 }
-footer .brand {
-  font: 400 2rem var(--serif);
+footer .brand-name {
+  font-size: clamp(3.8rem, 8vw, 8rem);
+  line-height: 0.78;
+}
+.footer-tagline {
+  margin-top: 1.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.footer-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding-top: 0.25rem;
+}
+.footer-nav,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+.footer-nav a,
+.footer-contact a {
+  color: var(--ink);
+}
+.footer-label {
+  margin-bottom: 0.65rem;
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.footer-meta {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
 }
 .reveal {
   opacity: 0;
@@ -514,11 +595,28 @@ footer .brand {
 }
 @media (max-width: 760px) {
   .site-header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    grid-template-columns: 1fr auto;
+    min-height: 5.75rem;
+  }
+  .site-header .brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 1rem 0;
+  }
+  .brand-name {
+    font-size: 1.85rem;
+  }
+  .brand-descriptor {
+    font-size: 0.48rem;
+    padding: 0;
   }
   .menu-toggle {
     display: block;
+    align-self: center;
+    padding: 0.75rem 0 0.75rem 1.5rem;
   }
   .nav {
     display: none;
@@ -527,13 +625,29 @@ footer .brand {
     left: 0;
     right: 0;
     background: var(--paper);
-    padding: 2rem var(--pad);
+    padding: 1rem var(--pad) 2rem;
     border-bottom: 1px solid var(--line);
     flex-direction: column;
-    font-size: 1rem;
+    align-items: stretch;
+    gap: 0;
+    font: 400 2rem/1.1 var(--serif);
+    letter-spacing: -0.025em;
+    text-transform: none;
   }
   .nav.open {
     display: flex;
+  }
+  .nav a {
+    padding: 1rem 0 1rem 2.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav a:before {
+    top: 1.5rem;
+    font: 500 0.48rem/1 var(--sans);
+    letter-spacing: 0.08em;
+  }
+  .nav a:after {
+    display: none;
   }
   .hero {
     display: flex;
@@ -640,6 +754,17 @@ footer .brand {
   }
   footer {
     grid-template-columns: 1fr;
+    row-gap: 3.5rem;
+  }
+  footer .brand-name {
+    font-size: clamp(3.7rem, 18vw, 5.5rem);
+  }
+  .footer-details {
+    gap: 1.5rem;
+  }
+  .footer-meta {
+    flex-direction: column;
+    gap: 0.45rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
