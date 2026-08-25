@@ -24,9 +24,10 @@
   <body>
     <a class="skip" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
-      <a class="brand" href="index.html"
-        >Norte Estudio<span>Arquitectura + Interiorismo</span></a
-      ><button class="menu-toggle" aria-expanded="false" aria-controls="menu">
+      <a class="brand" href="index.html" aria-label="Norte Estudio — Inicio">
+        <span class="brand-name">Norte Estudio</span>
+        <span class="brand-descriptor">Arquitectura + Interiorismo</span>
+      </a><button class="menu-toggle" aria-expanded="false" aria-controls="menu">
         Menú
       </button>
       <nav class="nav" id="menu" aria-label="Navegación principal">
@@ -86,11 +87,28 @@
       </section>
     </main>
     <footer>
-      <div>
-        <a class="brand" href="index.html">Norte Estudio</a>
-        <p>Arquitectura + Interiorismo<br />Buenos Aires, Argentina</p>
+      <div class="footer-intro">
+        <a class="brand-name" href="index.html">Norte Estudio</a>
+        <p class="footer-tagline">Arquitectura + Interiorismo</p>
       </div>
-      <p>Proyecto conceptual de Marea Studio · © 2026</p>
+      <div class="footer-details">
+        <nav class="footer-nav" aria-label="Navegación secundaria">
+          <p class="footer-label">Explorar</p>
+          <a href="proyectos.html">Proyectos</a>
+          <a href="estudio.html">Estudio</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="footer-contact">
+          <p class="footer-label">Estudio</p>
+          <p>Buenos Aires, Argentina</p>
+          <a href="mailto:hola@norteestudio.com.ar">hola@norteestudio.com.ar</a>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p>Proyecto conceptual de Marea Studio</p>
+        <p>© 2026 Norte Estudio</p>
+      </div>
     </footer>
     <script src="assets/js/main.js"></script>
   </body>
