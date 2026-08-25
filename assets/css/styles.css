@@ -159,8 +159,8 @@ main {
   padding-right: var(--pad);
 }
 .section {
-  padding-top: clamp(5rem, 10vw, 9rem);
-  padding-bottom: clamp(5rem, 10vw, 9rem);
+  padding-top: clamp(4.5rem, 7vw, 7rem);
+  padding-bottom: clamp(4.5rem, 7vw, 7rem);
 }
 .eyebrow {
   font-size: 0.67rem;
@@ -307,7 +307,7 @@ main {
   margin: 0 0 2rem;
 }
 .services-list {
-  margin-top: 4rem;
+  margin-top: 2rem;
   border-top: 1px solid var(--line);
 }
 .service-row {
@@ -325,7 +325,7 @@ main {
   font-size: 0.7rem;
 }
 .closing {
-  min-height: 70vh;
+  min-height: 52vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -336,8 +336,11 @@ main {
   max-width: 800px;
 }
 .page-head {
-  padding-top: clamp(5rem, 11vw, 10rem);
-  padding-bottom: clamp(4rem, 8vw, 7rem);
+  padding-top: clamp(4.5rem, 7vw, 7rem);
+  padding-bottom: clamp(3rem, 5vw, 5rem);
+}
+.page-head + .section {
+  padding-top: clamp(1.5rem, 3vw, 3rem);
 }
 .page-head .lede {
   margin-left: auto;
@@ -345,7 +348,7 @@ main {
 .folio {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  row-gap: 9rem;
+  row-gap: clamp(5rem, 7vw, 7rem);
 }
 .folio .project-card:nth-child(1) {
   grid-column: 1/10;
@@ -369,6 +372,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8vw;
+  padding-bottom: clamp(4rem, 6vw, 6rem);
 }
 .studio-image {
   aspect-ratio: 4/5;
@@ -384,7 +388,10 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4vw;
-  margin-top: 6rem;
+  margin-top: clamp(3.5rem, 5vw, 4.5rem);
+}
+.studio-layout + .section {
+  padding-top: clamp(2.5rem, 4vw, 4rem);
 }
 .principles article {
   border-top: 1px solid var(--line);
@@ -412,7 +419,7 @@ main {
   gap: 10vw;
 }
 .contact-details {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 .contact-form {
   display: grid;
@@ -517,7 +524,7 @@ main {
   aspect-ratio: 4/5;
 }
 .back {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 footer {
   border-top: 1px solid var(--line);
@@ -594,6 +601,17 @@ footer .brand-name {
   outline-offset: 4px;
 }
 @media (max-width: 760px) {
+  .section {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+  .page-head {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+  .page-head + .section {
+    padding-top: 1.5rem;
+  }
   .site-header {
     grid-template-columns: 1fr auto;
     min-height: 5.75rem;
@@ -680,7 +698,7 @@ footer .brand-name {
   .project-card,
   .project-card:nth-child(3) {
     width: 100%;
-    margin: 0 0 4.5rem;
+    margin: 0 0 3.5rem;
   }
   .project-card .project-image,
   .project-card:first-child .project-image,
@@ -716,14 +734,20 @@ footer .brand-name {
     display: block;
   }
   .folio .project-card {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
   .folio .project-card:nth-child(n) {
     width: auto;
   }
   .principles {
     grid-template-columns: 1fr;
-    margin-top: 4rem;
+    margin-top: 3rem;
+  }
+  .studio-layout {
+    padding-bottom: 3rem;
+  }
+  .studio-layout + .section {
+    padding-top: 2rem;
   }
   .services-page .service-row {
     grid-template-columns: 3rem 1fr;
@@ -741,6 +765,11 @@ footer .brand-name {
   }
   .project-cover {
     height: 58vh;
+  }
+  .closing {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   .project-hero {
     align-items: start;
